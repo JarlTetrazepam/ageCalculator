@@ -1,8 +1,37 @@
+:root {
+    --text-base-size: 1em;
+    
+    --text-scale-ratio: 1.2;
+    --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+    --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+    --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+    --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+
+    font-family: 'Segoe UI', "Tahoma", "Geneva", "Verdana", "sans-serif";
+  }
+
 body {
     display: flex;
-    align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 3em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--text-xl);
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: var(--text-md);
 }
 
 .C14Age {

@@ -11,7 +11,7 @@ function calcAgeByC14(at, mass) {
     if (at <= 0) {
         age = "an infinite amount of"
     }
-    if (age < 0) return "Error: age can't be negative"
+    if (age < 0) return "Error: age can't be negative. Check your inputs"
     return `The object is ${age} years old.`
 }
 
