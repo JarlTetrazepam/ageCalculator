@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Age Calculator</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="calc.js" defer></script> 
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <section class="main">
+            <section class="C14Age">
+                <div class="itemWrapper">
+                    <h1>Calculate age with the C-14 method</h1>
+                </div>
+                <div class="activity itemWrapper">
+                    <label for="activity">Current Activity (in Bq or 1/s): </label>
+                    <input class="inputField" type="number" id="activity" step="any" min="0">
+                </div>
+                <div class="mass itemWrapper">
+                <label for="mass">Current Mass (in kg): </label>
+                    <input class="inputField" type="number" id="mass" step="any" min="0">
+                </div>
+                <div class="submitWrapper itemWrapper">
+                    <input type="submit" id="submit" value="Calculate!">
+                </div>
+                <div id="outputWrapper">
+                    <span>The object is <span id="output"></span> years old</span>
+                </div>
+            </section>
+        </section>
+    </body>
+</html>
