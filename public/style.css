@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    padding: 3em;
+    padding: 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,6 +36,7 @@ h1 {
 }
 
 h2 {
+    margin: 0.5em 0;
     font-size: var(--text-md);
 }
 
@@ -46,7 +47,9 @@ h2 {
 
 .itemWrapper {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     margin: 0.5em;
 }
 
@@ -60,7 +63,9 @@ h2 {
 }
 
 .inputField {
-    margin: 0 1em;
+    margin: 0.3em 1em;
+    padding: 0.25em;
+    min-width: 80%;
 }
 
 #submit {
@@ -76,4 +81,14 @@ h2 {
     cursor: pointer;
     background-color: rgb(var(--lightGreen));
     color: rgb(var(--semiBlack));
+}
+
+@media only screen and (min-width: 600px) {
+    .itemWrapper {
+        flex-direction: row;
+    }
+
+    .inputField {
+        min-width: 40%;
+    }
 }
