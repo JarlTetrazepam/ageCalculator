@@ -3,7 +3,7 @@ const outputWrapper = document.getElementById("outputWrapper")
 const output = document.getElementById("output")
 
 function calcAgeByC14(at, mass) {
-    let atInMin = at / 60
+    let atInMin = at * 60
     let atPerMass = !mass ? atInMin : (mass * 1000) / atInMin
     let a0 = 13.56
     let th = 5730
