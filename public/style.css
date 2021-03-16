@@ -85,6 +85,12 @@ h2 {
     color: rgb(var(--semiBlack));
 }
 
+.srOnly {
+    z-index: -99999;
+    position: absolute;
+    opacity: 0;
+}
+
 @media only screen and (min-width: 600px) {
     body {
         padding: 1em;

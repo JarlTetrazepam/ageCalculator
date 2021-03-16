@@ -17,12 +17,11 @@
                     <h2>If you know the activity:</h2>
                 </div>
                 <div class="activity itemWrapper">
-                    <div class="test">
-                        <label for="activity">Current activity: </label>
-                        <label for="activityUnitSelect">Select unit: </label>
-                    </div>
+                    <label for="activity">Current activity: </label>
+                    <label class="srOnly" for="activityUnitSelect">Select unit: </label>
+                    
                     <input class="inputField" type="number" id="activity" step="any" min="0" required>
-
+                    
                     <select name="activityUnitSelect" id="activityUnitSelect" class="unitSelect">
                         <option value="bq">Bq</option>
                         <option value="dpm">Disintegrations/min</option>
@@ -32,7 +31,7 @@
                     <label for="mass">(Optional) Current mass: </label>
                     <input class="inputField" type="number" id="mass" step="any" min="0">
 
-                    <label for="massUnitSelect">Select Unit</label>
+                    <label class="srOnly" for="massUnitSelect">Select Unit</label>
                     <select name="massUnitSelect" id="massUnitSelect" class="unitSelect">
                         <option value="kilogram">Kg</option>
                         <option value="grams">g</option>
