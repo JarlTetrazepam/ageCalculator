@@ -5,14 +5,17 @@ const actUnits = document.getElementById("activityUnitSelect")
 const massUnits = document.getElementById("massUnitSelect")
 
 function calcAgeByC14(at, mass) {
+
+    // tranform input to activity / minute
     let atInMin = at
 
     if (actUnits.value !== "dpm") {
         atInMin *= 60
     }
     
+    // if mass is given, calculate unit into grams
     const massHandler = function() {
-        if (!mass) return atInMin;
+        if (!mass) return 1 / atInMin;
         switch(true) {
             case (massUnits.value === "grams"):
                 return mass / atInMin
@@ -25,7 +28,7 @@ function calcAgeByC14(at, mass) {
 
     const a0 = 13.56
     const th = 5730
-    let age = Math.round((-Math.log(massHandler()/a0) * (th/Math.log(2))) * 1000) / 1000
+    let age = Math.round((((Math.log(a0/massHandler()) / Math.log(2)) * th) * 1000) / 1000)
     if (at <= 0) {
         age = "an infinite amount of"
     }
