@@ -21,7 +21,6 @@
 body {
     display: flex;
     justify-content: center;
-    min-height: 100vh;
     padding: 0.5em;
 }
 
@@ -65,7 +64,7 @@ h2 {
 }
 
 .inputField {
-    margin: 0.3em 0;
+    margin: 0.3em 0 0 0;
     padding: 0.25em;
     min-width: 80%;
 }
@@ -91,17 +90,30 @@ h2 {
     opacity: 0;
 }
 
+select {
+    padding: 0.15em;
+}
+
 @media only screen and (min-width: 600px) {
     body {
         padding: 1em;
     }
 
+    .mobileOnly {
+        position: absolute;
+        z-index: -999999;
+        opacity: 0;
+    }
+
     .itemWrapper {
         flex-direction: row;
+        align-items: center;
+        min-width: 90%;
     }
 
     .inputField {
         min-width: 40%;
         margin: 0.3em 1em;
+        margin-left: auto;
     }
 }

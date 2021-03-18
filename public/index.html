@@ -22,9 +22,10 @@
                     
                     <input class="inputField" type="number" id="activity" step="any" min="0" required>
                     
+                    <label for="activityUnitSelect" class="mobileOnly" aria-hidden="true">in: </label>
                     <select name="activityUnitSelect" id="activityUnitSelect" class="unitSelect">
                         <option value="bq">Bq</option>
-                        <option value="dpm">Disintegrations/min</option>
+                        <option value="dpm">dpm</option>
                     </select>
                 </div>
                 <div class="mass itemWrapper">
@@ -32,6 +33,8 @@
                     <input class="inputField" type="number" id="mass" step="any" min="0">
 
                     <label class="srOnly" for="massUnitSelect">Select Unit</label>
+                    <label for="massUnitSelect" class="mobileOnly" aria-hidden="true">in: </label>
+
                     <select name="massUnitSelect" id="massUnitSelect" class="unitSelect">
                         <option value="kilogram">Kg</option>
                         <option value="grams">g</option>
