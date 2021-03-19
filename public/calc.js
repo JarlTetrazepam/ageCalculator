@@ -15,8 +15,8 @@ function calcAgeByC14(at, mass) {
     
     // if mass is given, calculate unit into grams
     const massHandler = function() {
-        if (!mass || massUnits.value === "grams") return atInMin;
-        if (massUnits.value === "milligram") return atInMin / (mass / 1_000)
+        if (!mass || massUnits.value === "gram") return atInMin;
+        if (massUnits.value === "milligram") return atInMin / (mass / 1000)
         if (massUnits.value === "kilogram") return atInMin / (mass * 1000)
     }
 
