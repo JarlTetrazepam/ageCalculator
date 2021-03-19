@@ -15,18 +15,12 @@ function calcAgeByC14(at, mass) {
     
     // if mass is given, calculate unit into grams
     const massHandler = function() {
-        if (!mass) return 1 / atInMin;
-        switch(true) {
-            case (massUnits.value === "grams"):
-                return mass / atInMin
-            case (massUnits.value === "milligram"):
-                return (mass / 1000) / atInMin
-            default:
-                return (mass * 1000) / atInMin
-        }
+        if (!mass || massUnits.value === "grams") return atInMin;
+        if (massUnits.value === "milligram") return atInMin / (mass / 1_000)
+        if (massUnits.value === "kilogram") return atInMin / (mass * 1000)
     }
 
-    const a0 = 13.56
+    const a0 = 16
     const th = 5730
     let age = Math.round((((Math.log(a0/massHandler()) / Math.log(2)) * th) * 1000) / 1000)
     if (at <= 0) {
