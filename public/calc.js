@@ -22,7 +22,7 @@ function calcAgeByC14(at, mass) {
 
     const a0 = 16
     const th = 5730
-    let age = Math.round((((Math.log(a0/massHandler()) / Math.log(2)) * th) * 1000) / 1000)
+    let age = Math.round((((Math.log(massHandler()/a0) * th) / -Math.log(2)) * 1000) / 1000)
     if (at <= 0) {
         age = "an infinite amount of"
     }
