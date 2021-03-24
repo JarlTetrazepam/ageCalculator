@@ -5,8 +5,10 @@ const actUnits = document.getElementById("activityUnitSelect")
 const massUnits = document.getElementById("massUnitSelect")
 
 function calcAgeByC14(at, mass) {
+    // half time of C14
+    const th = 5730
 
-    // tranform input to activity / minute
+    // transform input to activity / minute
     let atInMin = at
 
     if (actUnits.value !== "dpm") {
@@ -20,11 +22,20 @@ function calcAgeByC14(at, mass) {
         if (massUnits.value === "kilogram") return atInMin / (mass * 1000)
     }
 
-    const a0 = 16
-    const th = 5730
+    // converts half time to minutes and calculates lambda
+    const lambda = Math.log(2) / (th * 525600)
+
+    // number of C14-particles by converting baseline of ~12g/mol C12-particles to mol, then to particles, then using the frequency ratio of C12 and C14 to C14-particles
+    const C14N = (1/12) * (6.022 * Math.pow(10, 23)) * (1.2 * Math.pow(10, -12))
+
+    // activity = lambda * N
+    const a0 = lambda * C14N
+    console.log(a0)
+
     let age = Math.round((((Math.log(massHandler()/a0) * th) / -Math.log(2)) * 1000) / 1000)
     if (at <= 0) {
         age = "an infinite amount of"
+        return `The object is ${age} years old. It might not be dead yet, please double check`
     }
     if (age < 0) return "Error: age can't be negative. Check your inputs"
     return `The object is ${age} years old.`
